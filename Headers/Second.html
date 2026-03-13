@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+            body{
+                padding: 12px 40px;
+                display: flex;
+                justify-content: space-between;
+            }
+            div{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            #nav{
+                gap: 48px;
+            }
+            #buttons{
+                gap: 8px;
+            }
+            img{
+                width: 40px;
+                height: 40px;
+            }
+            a {
+                font-weight: 500;
+                font-size: 15px;
+                text-align: center;
+                color: #242424;
+                font-family: "Inter", sans-serif;
+                text-decoration: none;
+            }
+            button{
+                border-radius: 16px;
+                padding: 10px;
+                border: none;
+                max-height: 40px;
+                background-color: #F0F0F0;
+            }
+            #sign-in {
+                background-color: #5C53E9;
+                border: 1px solid;
+                color: white;
+                font-size: 14px;
+                font-weight: 500;
+                font-family: "Inter", sans-serif;
+            }
+        </style>
+    </head>
+    <body link="black" vlink="black" alink="#5856D6">
+        <div id="nav">
+            <img src="https://www.nicepng.com/png/full/185-1859294_as-for-symbols-you-could-get-gorillaz-logo.png">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Market</a>
+            <a href="#">Services</a>
+            <a href="#">Blog</a>
+        </div>
+        <div id="buttons">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+            </button>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag-icon lucide-shopping-bag"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
+            </button>
+            <button id="sign-in">Sign In</button>
+        </div>
+    </body>
+</html>

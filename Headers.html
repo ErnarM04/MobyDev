@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        body{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+            #first{
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: space-between;
+                font-family: "Inter", sans-serif;
+                padding: 12px 40px;
+            }
+            #first #logo{
+                display: flex;
+                align-items: center;
+                max-width: fit-content;
+                gap: 8px;
+                cursor: pointer;
+                user-select: none;
+            }
+            #first #logo img{
+                width: 48px;
+            }
+            #first #logo p{
+                font-weight: 900;
+                font-size: x-large;
+                margin: 0;
+            }
+            #first #search {
+                width: 30%;
+                border: 1px solid #DFDFDF;
+                border-radius: 8px;
+                padding: 12px;
+                font-weight: 400;
+                font-size: 14px;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+            }
+            #first input{
+                border: none;
+                width: 100%;
+            }
+            #first input::selection{
+                border: none;
+            }
+            #first a{
+                text-decoration: none;
+                color: #242424;
+                font-family: "Inter", sans-serif;
+            }
+            #first #navigation{
+                font-size: 14px;
+                display: flex;
+                gap: 40px;
+                align-items: center;
+            }
+            #first #navigation button{
+                background-color: black;
+                color: white;
+                font-weight: 600;
+                border-radius: 8px;
+                padding: 12px;
+            }
+            #second{
+                padding: 12px 40px;
+                display: flex;
+                justify-content: space-between;
+            }
+            #second div{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            #second #nav{
+                gap: 48px;
+            }
+            #second #buttons{
+                gap: 8px;
+            }
+            #second img{
+                width: 40px;
+                height: 40px;
+            }
+            #second a {
+                font-weight: 500;
+                font-size: 15px;
+                text-align: center;
+                color: #242424;
+                font-family: "Inter", sans-serif;
+                text-decoration: none;
+            }
+            #second button{
+                border-radius: 16px;
+                padding: 10px;
+                border: none;
+                max-height: 40px;
+                background-color: #F0F0F0;
+            }
+            #second #sign-in {
+                background-color: #5C53E9;
+                border: 1px solid;
+                color: white;
+                font-size: 14px;
+                font-weight: 500;
+                font-family: "Inter", sans-serif;
+            }
+            #third{
+            padding: 12px 36px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #third a {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #242424;
+            text-decoration: none;
+        }
+        #third p {
+            margin: 0;
+        }
+        #third img {
+            height: 45px;
+        }
+        #third #logo {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+        }
+        #third #logo div{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        #third #this-is {
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+        }
+        #third #my-logo {
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+        }
+        #third #nav {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+        }
+        #fourth{
+            padding: 12px 36px;
+            display: flex;
+            background-color: #111928;
+            color: white;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            max-height: fit-content;
+        }
+        #fourth a {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+        }
+        #fourth p {
+            margin: 0;
+        }
+        #fourth img {
+            height: 45px;
+        }
+        #fourth #logo {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+        }
+        #fourth #logo div{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        #fourth #this-is {
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+        }
+        #fourth #my-logo {
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+        }
+        #fourth #nav {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+        }
+        #fifth{
+            padding: 12px 36px;
+            display: flex;
+            background-color: #111928;
+            color: white;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            max-height: fit-content;
+        }
+        #fifth a {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+        }
+        #fifth #search{
+            border-radius: 10px;
+            border: 1px #D6D8DE solid;
+            color: #D6D8DE;
+            padding: 10px;
+            width: 30%;
+            padding-left: 20px;
+            background-color: inherit;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: space-between;
+        }
+        #fifth input {
+            border: none;
+            color: white;
+            background-color: inherit;
+            width: 100%;
+        }
+        #fifth p {
+            margin: 0;
+        }
+        #fifth img {
+            height: 45px;
+        }
+        #fifth #logo {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+            min-width: fit-content;
+        }
+        #fifth #logo div{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        #fifth #this-is {
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+        }
+        #fifth #my-logo {
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+        }
+        #fifth #nav {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div id="first">
+        <div id="logo">
+            <img src="https://www.nicepng.com/png/full/185-1859294_as-for-symbols-you-could-get-gorillaz-logo.png">
+            <p>Logoipsum</p>
+        </div>
+        <div id="search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+            <input type="text" placeholder="Search">
+        </div>
+        <div id="navigation">
+            <a href="#">Products</a>
+            <a href="#">Services</a>
+            <a href="#">Expertise</a>
+            <a href="#">About</a>
+            <button>Login / Signup</button>
+        </div>
+    </div>
+    <div id="second">
+        <div id="nav">
+            <img src="https://www.nicepng.com/png/full/185-1859294_as-for-symbols-you-could-get-gorillaz-logo.png">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Market</a>
+            <a href="#">Services</a>
+            <a href="#">Blog</a>
+        </div>
+        <div id="buttons">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+            </button>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag-icon lucide-shopping-bag"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
+            </button>
+            <button id="sign-in">Sign In</button>
+        </div>
+    </div>
+    <div id="third">
+        <div id="logo">
+        <img src="https://www.nicepng.com/png/full/185-1859294_as-for-symbols-you-could-get-gorillaz-logo.png">
+        <div>
+            <p id="this-is">THIS IS</p>
+            <p id="my-logo">MY LOGO</p>
+        </div>    
+    </div>
+    <div id="nav">
+        <a href="#">About</a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Gallery</a>
+        <a href="#">Team</a>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+    </div>
+    <div id="fourth">
+        <div id="logo">
+        <img src="https://simg.nicepng.com/png/small/185-1859294_as-for-symbols-you-could-get-gorillaz-logo.png">
+        <div>
+            <p id="this-is">THIS IS</p>
+            <p id="my-logo">MY LOGO</p>
+        </div>    
+    </div>
+    <div id="nav">
+        <a href="#">About</a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Gallery</a>
+        <a href="#">Team</a>
+    </div>
+    </div>
+    <div id="fifth">
+        <div id="logo">
+        <img src="https://simg.nicepng.com/png/small/185-1859294_as-for-symbols-you-could-get-gorillaz-logo.png">
+        <div>
+            <p id="this-is">THIS IS</p>
+            <p id="my-logo">MY LOGO</p>
+        </div>    
+    </div>
+    <div id="search">
+        <input type="text" placeholder="Search...">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+    </div>
+    <div id="nav">
+        <a href="#">About</a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Gallery</a>
+        <a href="#">Team</a>
+    </div>
+    </div>
+</body>
+</html>
