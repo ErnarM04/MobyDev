@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+           font-family: "Proxima Nova";
+            src: url("https://db.onlinewebfonts.com/t/f07adcc3b76e4bcccedf8089dca270ec.eot");
+            src: url("https://db.onlinewebfonts.com/t/f07adcc3b76e4bcccedf8089dca270ec.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/f07adcc3b76e4bcccedf8089dca270ec.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/f07adcc3b76e4bcccedf8089dca270ec.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/f07adcc3b76e4bcccedf8089dca270ec.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/f07adcc3b76e4bcccedf8089dca270ec.svg#Proxima Nova S Semibold")format("svg");
+        }
+        #hero-card{
+            background-color: black;
+            border-radius: 32px;
+            display: flex;
+            flex-direction: row;
+            gap: 48px;
+            font-family: "DM Sans", sans-serif;
+            padding: 40px;
+            color: white;
+        }
+        #hero-card img{
+            max-width: 30%;
+            object-fit: cover;
+        }
+        #hero-card p{
+            margin: 0;
+        }
+        #hero-card .badge{
+            font-size: 18px;
+            margin-top: 8px;
+            background-color: #191919;
+            border-radius: 6px;
+            padding: 0 16px;
+            max-width: fit-content;
+        }
+        #hero-card #episode{
+            color: #118DA8;
+            font-size: 17px;
+            margin-top: 48px;
+        }
+        #hero-card #title{
+            font-size: 64px;
+            margin-top: 18px;
+        }
+        #hero-card #description{
+            font-size: 22px;
+            opacity: 70%;
+            margin-top: 28px;
+        }
+        #hero-card button{
+            color: white;
+            background-color: #118DA8;
+            font-size: 18px;
+            border-radius: 6px;
+            padding: 12px 18px;
+            border: none;
+            margin-top: 18px;
+        }
+        .picture{
+            width: fit-content;
+            padding: 20px;
+            font-weight: 500;
+            font-family: "Raleway", sans-serif;
+            background-color: #E1EDE6;
+        }
+        .picture img{
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+        }
+        .picture #author{
+            font-size: 16px;
+            color: #86928B;
+        }
+        .picture #title{
+            color: #2C2D35;
+            font-size: 24px;
+        }
+        .picture #type{
+            font-size: 16px;
+            color: #2C2D35;
+        }
+        .picture #price{
+            color: #598D66;
+            font-size: 20px;
+        }
+        .picture button{
+            width: 100%;
+            border: 1px solid #598D66;
+            padding: 20px 60px;
+            color: #598D66;
+            font-size: 18px;
+            background-color: inherit;
+        }
+        
+        .product{
+            display: flex;
+            font-family: "Montserrat", sans-serif;
+            flex-direction: column;
+            width: 380px;
+            border-radius: 10px;
+        }
+        .product img{
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .product p{
+            margin: 0;
+        }
+        .product #details{
+            padding: 50px 44px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .product #info{
+            color: #2E363E;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .product #title{
+            font-weight: 700;
+            font-size: 24px;
+        }
+        .product #description{
+            font-size: 16px;
+            color: #2E363E;
+        }
+        .product #purchase{
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .product #price{
+            font-weight: 500;
+            font-size: 24px;
+            color: #434B53;
+        }
+        .product button{
+            background-color: #FED84C;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 18px;
+            color: #2E363E;
+        }
+
+        #about-me{
+            width: 330px;
+            height: fit-content;
+            border-radius: 16px;
+            padding: 22px 28px;
+            background-color: #0C0B15;
+            font-family: "Proxima Nova", sans-serif;
+        }
+        #about-me #header{
+            display: flex;
+            justify-content: space-between;
+        }
+        #about-me #pfp{
+            background-color: #06152B;
+            border-radius: 100%;
+            padding: 6px;
+        }
+        #about-me #title{
+            color: white;
+            font-size: 22px;
+        }
+        #about-me #author{
+            font-size: 18px;
+            color: #809FB8;
+        }
+        #about-me #text{
+            font-size: 16px;
+            color: #809FB8;
+        }
+        #others{
+            display: flex;
+            flex-direction: row;
+            gap: 11.5%;
+        }
+    </style>
+</head>
+<body>
+    <div id="hero-card">
+        <img src="https://utell.ai/blog/wp-content/uploads/2025/08/live-voice-translator-for-podcast-cover-1024x576.jpg">
+        <div id="info">
+            <p class="badge">Gear</p>
+            <p id="episode">Episode 3</p>
+            <p id="title">Should you get outboard audio gear?</p>
+            <p id="description">Is hardware really worth it when it comes to podcasting? The answer is...it depends. Here’s our reasons on why you might want to consider picking something up.</p>
+            <button>View Episode Details</button>
+        </div>
+    </div>
+    <div id="others">
+        <div class="picture">
+            <img src="https://niksen.media/wp-content/uploads/2024/02/12-book-illustration-style-1-2-802x1024.jpg">
+            <p id="author">Анри Селин</p>
+            <p id="title">Дама с собачкой</p>
+            <p id="type">Акрил, бумага (50x80)</p>
+            <p id="price">16 500 руб</p>
+            <button>В корзину</button>
+        </div>
+
+        <div class="product">
+            <img src="https://www.e-xecutive.ru/uploads/article/image/1994123/thumb_cake.jpg">
+            <div id="details">
+                <div id="info">
+                    <p id="title">Облачная сказка</p>
+                    <p id="description">Светлая основа, нежный крем со стружкой сверху</p>
+                </div>
+                <div id="purchase">
+                    <p id="price">150 ₽/шт. </p>
+                    <button>Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="about-me">
+            <div id="header">
+                <svg id="pfp" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#99B2C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-icon lucide-ellipsis"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+            </div>
+            <div id="footer">
+                <p id="title">About Me</p>
+                <p id="author">Jason Maning  Product Designer</p>
+                <p id="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
