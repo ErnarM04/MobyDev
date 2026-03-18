@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        .static {
+            position: static;
+        }
+        #relative {
+            position: relative;
+            top: 10px;
+            right: 10px;
+            left: 10px;
+            bottom: 10px;
+        }
+        #absolute {
+            position: absolute;
+            left: 40px;
+        }
+        #fixed {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+        #sticky {
+            position: sticky;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Әдеттегі позиция. Ешқандай top, right әсер етпейді. -->
+    <div>
+        <div class="static">Hello World</div>
+        <div class="static">Hello World</div>
+        <div class="static">Hello World</div>
+    </div>
+    <br>
+    <!-- Еркін позиция беру мүмкіндігі бар. Статикалық айырмашылығы сол ғана. -->
+    <div>
+        <div id="relative">Hello World</div>
+    </div>
+    <br>
+    <!-- Абсолютті позицияда өзінің орны жоқ. Тек жоғарғы элементке қатысты қозғалады. -->
+    <div>
+        <span>Hello World</span>
+        <span id="absolute">Hello World</span>
+        <span>Hello World</span>
+    </div>
+    <br>
+    <!-- Фикседте де орны жоқ, тек абсолюттен айырмашылығы беттің кез келген бөлігінде өзіне қойылған позицияда тұрады. -->
+    <div>
+        <div id="fixed">Hello World</div>
+    </div>
+    <br>
+    <!-- Фиксед сияқты, бірақ өзімен бір деңгейдегі элементтерге қатысты. -->
+    <div>
+        <h1 id="sticky">Heading</h1>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+
+    </div>
+</body>
+</html>
