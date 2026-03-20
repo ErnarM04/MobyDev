@@ -1,0 +1,282 @@
+body {
+  background-color: #191919;
+  font-family: "DM Sans", sans-serif;
+  color: white;
+}
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 32px;
+  padding: 26px 50px;
+}
+#title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+#navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+#navigation a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+#main {
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: center;
+}
+#main img {
+  width: 650px;
+}
+#main-right {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#main-title {
+  font-size: 70px;
+  font-weight: 400;
+  padding-right: 35%;
+}
+#main #icons {
+  display: flex;
+  flex-direction: row;
+  gap: 21px;
+  width: fit-content;
+}
+.hero-card {
+  width: fit-content;
+  height: 465px;
+  background-color: black;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  padding: 40px;
+  color: white;
+}
+.hero-card img {
+  width: 389px;
+  height: 465px;
+  object-fit: cover;
+}
+.hero-card p {
+  margin: 0;
+}
+.hero-card .badge {
+  font-size: 18px;
+  margin-top: 8px;
+  background-color: #191919;
+  border-radius: 6px;
+  padding: 0 16px;
+  max-width: fit-content;
+}
+.hero-card #episode {
+  color: #118da8;
+  font-size: 17px;
+  margin-top: 48px;
+}
+.hero-card #title {
+  width: 700px;
+  font-size: 64px;
+  font-weight: 400;
+  margin-top: 18px;
+}
+.hero-card #description {
+  font-size: 22px;
+  opacity: 0.7;
+  font-weight: 400;
+  margin-top: 28px;
+}
+#episodes button {
+  color: white;
+  background-color: #118da8;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 6px;
+  padding: 12px 18px;
+  border: none;
+  margin-top: 18px;
+}
+#episodes {
+  padding: 92px 50px;
+}
+#idk {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+#idk p {
+  font-size: 64px;
+  margin: 0;
+  font-weight: 400;
+}
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+}
+#host {
+  display: flex;
+  flex-direction: row;
+  padding: 100px 50px;
+  justify-content: center;
+  gap: 60px;
+  align-items: center;
+}
+#host div {
+  width: 590px;
+
+  display: flex;
+  flex-direction: column;
+}
+#meet {
+  font-size: 18px;
+  color: #118da8;
+}
+#son🙏😭 {
+  font-size: 65px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin: 0;
+}
+#host .description {
+  opacity: 0.7;
+  font-size: 22px;
+  margin-top: 28px;
+}
+#host img {
+  width: 650px;
+}
+#subscribe {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  margin: 100px 50px;
+  padding: 60px;
+  padding-bottom: 75px;
+  border: none;
+  border-radius: 32px;
+}
+#subscribe div {
+  width: 40%;
+}
+#subscribe #mini-title {
+  font-weight: 400;
+  font-size: 18px;
+  color: #118da8;
+  margin: 0;
+}
+#subscribe #title {
+  font-weight: 400;
+  font-size: 72px;
+}
+#subscribe input {
+  background-color: #191919;
+  border: 1px #191919 solid;
+  font-weight: 400;
+  font-size: 24px;
+  color: white;
+  padding: 26px 20px;
+  border-radius: 6px;
+  opacity: 0.7;
+}
+#subscribe button {
+  background-color: #118da8;
+  border-radius: 6px;
+  width: fit-content;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  opacity: 0.7;
+  padding: 10px 16px;
+  color: white;
+}
+#subscribe #form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.review {
+  background-color: black;
+  border: none;
+  border-radius: 32px;
+  padding: 54px 50px;
+}
+.review #stars {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+.review #content {
+  font-weight: 400;
+  font-size: 36px;
+  margin-top: 21px;
+  margin-bottom: 19px;
+}
+.review #author {
+  font-weight: 400;
+  font-size: 24px;
+  opacity: 0.7;
+  margin: 0;
+}
+#reviews {
+  padding: 100px 50px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 16px;
+}
+#about p {
+  font-weight: 600;
+  font-size: 42px;
+  margin: 0;
+  margin-bottom: 24px;
+}
+#about #icons {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 222px;
+}
+.links a {
+  font-weight: 400;
+  font-size: 17px;
+  color: white;
+  text-decoration: none;
+}
+#footer #icons {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  width: fit-content;
+}
+#footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* gap: 16px; */
+  padding: 100px 50px;
+}
+#about {
+  padding-right: 222px;
+}
