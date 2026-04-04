@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import "./styles/Buttons.scss";
+@import "./styles/Link.scss";
+@import "./styles/Shadow.scss";

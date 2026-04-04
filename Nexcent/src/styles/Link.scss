@@ -1,0 +1,27 @@
+@import "./Color.scss";
+
+.link {
+  cursor: pointer;
+  font-size: 18px;
+  color: $primary-color;
+}
+.link:hover {
+  border-bottom: 1px solid $primary-color;
+}
+.link:focus {
+  outline: 1px solid #89939e;
+}
+.link:active {
+  color: $active-color;
+  outline: none;
+  border-bottom: 1px solid $active-color;
+}
+.link:disabled {
+  color: #abbed1;
+}
+.link-md {
+  font-size: 16px;
+}
+.link-sm {
+  font-size: 14px;
+}

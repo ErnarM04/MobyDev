@@ -1,0 +1,68 @@
+@use "./Color.scss";
+
+@mixin btn($color, $bg-color) {
+  color: $color;
+  background-color: $bg-color;
+}
+@mixin btn-size($py, $px, $text-size) {
+  padding: $py $px;
+  font-size: $text-size;
+}
+
+.btn {
+  @include btn(Color.$primary-color, white);
+  @include btn-size(16px, 32px, 18px);
+  border-radius: 4px;
+  &-primary {
+    @include btn(white, Color.$primary-color);
+    border-radius: 4px;
+  }
+  &-secondary {
+    @include btn(Color.$primary-color, white);
+    outline: Color.$primary-color solid 1px;
+    border-radius: 4px;
+  }
+
+  &-md {
+    @include btn-size(14px, 32px, 16px);
+  }
+  &-sm {
+    @include btn-size(10px, 24px, 14px);
+  }
+}
+.btn-primary:focus {
+  outline: 2px solid #4d4d4d;
+}
+.btn-primary:active {
+  background-color: Color.$active-color;
+}
+.btn-primary:disabled {
+  color: #abbed1;
+  background-color: #f5f7fa;
+}
+.btn-secondary:hover {
+  background-color: #f5f7fa;
+}
+.btn-secondary:focus {
+  background-color: #f5f7fa;
+  outline: 2px solid #89939e;
+}
+.btn-secondary:active {
+  outline: none;
+}
+.btn-secondary:disabled {
+  color: #abbed1;
+}
+.btn:hover {
+  background-color: #f5f7fa;
+}
+.btn:focus {
+  outline: 2px solid #4d4d4d;
+}
+.btn:active {
+  background-color: #e8f5e9;
+}
+.btn:disabled {
+  color: #abbed1;
+  background-color: #f5f7fa;
+}
