@@ -6,11 +6,23 @@ import "./App.css";
 import ToDoItem from "./components/ToDoItem";
 
 function App() {
-  const todo = [
+  const test = [
     { id: 1, content: "Homework", isDone: false },
     { id: 2, content: "Clear", isDone: false },
     { id: 3, content: "To Do Something", isDone: false },
   ];
+  const [todo, setTodo] = useState([...test]);
+
+  function addNote(){
+    const task = {id: Date.now, content: "TODO " + (todo.length+1), isDone: false};
+    setTodo([...todo, task]);
+    console.log(todo);
+  }
+
+  function removeTask(id){
+    const newTodo = todo.filter((task) => task.id !== id);
+    setTodo(newTodo);
+  }
 
   return (
     <div className="mx-80 my-10 flex flex-col items-center">
@@ -49,8 +61,8 @@ function App() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M11.1249 0.548798C11.3387 0.917354 11.321 1.3762 11.0791 1.72705C10.3455 2.79152 9.91599 4.08062 9.91599 5.47334C9.91599 9.12428 12.8757 12.084 16.5266 12.084C17.9194 12.084 19.2085 11.6545 20.2729 10.9208C20.6238 10.6791 21.0826 10.6613 21.4512 10.8751C21.8197 11.089 22.0319 11.4962 21.9961 11.9208C21.5191 17.567 16.7867 22 11.0178 22C4.93282 22 0 17.0672 0 10.9822C0 5.21328 4.43301 0.480873 10.0792 0.00392422C10.5038 -0.0319387 10.911 0.180242 11.1249 0.548798ZM8.17985 2.63461C4.70452 3.81573 2.20355 7.10732 2.20355 10.9822C2.20355 15.8502 6.14981 19.7964 11.0178 19.7964C14.8927 19.7964 18.1843 17.2955 19.3654 13.8202C18.4741 14.1232 17.5191 14.2875 16.5266 14.2875C11.6587 14.2875 7.71244 10.3413 7.71244 5.47334C7.71244 4.48086 7.87682 3.52582 8.17985 2.63461Z"
               fill="#F7F7F7"
             />
@@ -62,12 +74,14 @@ function App() {
           todo.map((task) => (
             <div>
               {" "}
-              <ToDoItem key={task.id} content={task.content} />{" "}
+              <ToDoItem key={task.id} id={task.id} content={task.content} removeTask={removeTask} />{" "}
               <div className="w-full my-4 border-t border-[#6C63FF]" />{" "}
             </div>
           ))}
       </div>
-      <button className="rounded-full p-4 bg-[#6C63FF] shadow fixed right-1/4 bottom-8">
+      <button
+      onClick={addNote} 
+      className="rounded-full p-4 bg-[#6C63FF] cursor-pointer shadow fixed right-1/4 bottom-8">
         <svg
           width="24"
           height="24"
@@ -76,8 +90,8 @@ function App() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M10.5 22.5C10.5 22.8978 10.658 23.2794 10.9393 23.5607C11.2206 23.842 11.6022 24 12 24C12.3978 24 12.7794 23.842 13.0607 23.5607C13.342 23.2794 13.5 22.8978 13.5 22.5V13.5H22.5C22.8978 13.5 23.2794 13.342 23.5607 13.0607C23.842 12.7794 24 12.3978 24 12C24 11.6022 23.842 11.2206 23.5607 10.9393C23.2794 10.658 22.8978 10.5 22.5 10.5H13.5V1.5C13.5 1.10218 13.342 0.720644 13.0607 0.43934C12.7794 0.158035 12.3978 0 12 0C11.6022 0 11.2206 0.158035 10.9393 0.43934C10.658 0.720644 10.5 1.10218 10.5 1.5V10.5H1.5C1.10218 10.5 0.720644 10.658 0.43934 10.9393C0.158035 11.2206 0 11.6022 0 12C0 12.3978 0.158035 12.7794 0.43934 13.0607C0.720644 13.342 1.10218 13.5 1.5 13.5H10.5V22.5Z"
             fill="#F7F7F7"
           />
