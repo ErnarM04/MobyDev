@@ -4,17 +4,31 @@ import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
 import ToDoItem from "./components/ToDoItem";
+import { ThemeProvider, useTheme } from "./theme";
 
 function App() {
+  const [category, setCategory] = useState("ALL")
   const test = [
     { id: 1, content: "Homework", isDone: false },
     { id: 2, content: "Clear", isDone: false },
     { id: 3, content: "To Do Something", isDone: false },
   ];
   const [todo, setTodo] = useState([...test]);
+  const [origList, setOrigList] = useState([]);
+    const { darkMode, toggleTheme } = useTheme()
+
+    function selectCategory(cat){
+      if(category === "ALL"){
+        setOrigList([...todo]);
+      }
+      setCategory(cat);
+      if(cat === "ALL") setTodo([...origList]);
+      if(cat === "DONE") setTodo(todo.filter((task) => task.isDone));
+      if(cat === "UNDONE") setTodo(todo.filter((task) => !task.isDone));
+    }
 
   function addNote(){
-    const task = {id: Date.now, content: "TODO " + (todo.length+1), isDone: false};
+    const task = {id: Date.now(), content: "TODO " + (todo.length+1), isDone: false};
     setTodo([...todo, task]);
     console.log(todo);
   }
@@ -23,6 +37,13 @@ function App() {
     const newTodo = todo.filter((task) => task.id !== id);
     setTodo(newTodo);
   }
+
+  function toggleDone(id) {
+  const updated = todo.map((task) =>
+    task.id === id ? { ...task, isDone: !task.isDone } : task
+  );
+  setTodo(updated);
+}
 
   return (
     <div className="mx-80 my-10 flex flex-col items-center">
@@ -52,8 +73,11 @@ function App() {
           <option>DONE</option>
           <option>UNDONE</option>
         </select>
-        <button className="text-[#F7F7F7] rounded-[5px] p-2 bg-[#5850DD] border border-[#6C63FF]">
-          <svg
+        <button onClick={toggleTheme} className="text-[#F7F7F7] rounded-[5px] p-2 bg-[#5850DD] border border-[#6C63FF]">
+          {darkMode ? 
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fillRule="evenodd" clipRule="evenodd" d="M12.1576 1.15764C12.1576 0.518299 11.6394 0 11 0C10.3606 0 9.84235 0.518299 9.84235 1.15764V1.73887C9.84235 2.37822 10.3606 2.89651 11 2.89651C11.6394 2.89651 12.1576 2.37822 12.1576 1.73887V1.15764ZM18.7782 4.85893C19.2302 4.40683 19.2302 3.67386 18.7782 3.22177C18.3261 2.76969 17.5931 2.76969 17.141 3.22177L16.73 3.63282C16.2779 4.08492 16.2779 4.81789 16.73 5.26998C17.182 5.72206 17.915 5.72206 18.3671 5.26998L18.7782 4.85893ZM4.85889 3.22184C4.40681 2.76976 3.67383 2.76976 3.22175 3.22184C2.76967 3.67393 2.76967 4.4069 3.22175 4.859L3.63273 5.26998C4.08483 5.72206 4.8178 5.72206 5.26989 5.26998C5.72197 4.81789 5.72197 4.08492 5.26989 3.63282L4.85889 3.22184ZM1.15764 9.84235C0.518299 9.84235 0 10.3606 0 11C0 11.6394 0.518299 12.1576 1.15764 12.1576H1.73884C2.37819 12.1576 2.89648 11.6394 2.89648 11C2.89648 10.3606 2.37819 9.84235 1.73884 9.84235H1.15764ZM20.2611 9.84235C19.6217 9.84235 19.1035 10.3606 19.1035 11C19.1035 11.6394 19.6217 12.1576 20.2611 12.1576H20.8424C21.4817 12.1576 22 11.6394 22 11C22 10.3606 21.4817 9.84235 20.8424 9.84235H20.2611ZM5.26989 18.3672C5.72197 17.9151 5.72197 17.1821 5.26989 16.7301C4.8178 16.2779 4.08483 16.2779 3.63273 16.7301L3.22177 17.141C2.76968 17.5931 2.76968 18.3261 3.22176 18.7782C3.67385 19.2302 4.40682 19.2302 4.85892 18.7782L5.26989 18.3672ZM18.3671 16.7301C17.915 16.2779 17.182 16.2779 16.73 16.7301C16.2779 17.1821 16.2779 17.9151 16.73 18.3672L17.1409 18.7782C17.5931 19.2303 18.326 19.2303 18.7782 18.7782C19.2302 18.3261 19.2302 17.5932 18.7782 17.141L18.3671 16.7301ZM12.1576 20.2611C12.1576 19.6217 11.6394 19.1035 11 19.1035C10.3606 19.1035 9.84235 19.6217 9.84235 20.2611V20.8424C9.84235 21.4817 10.3606 22 11 22C11.6394 22 12.1576 21.4817 12.1576 20.8424V20.2611ZM6.36943 11C6.36943 8.4426 8.4426 6.36943 11 6.36943C13.5573 6.36943 15.6305 8.4426 15.6305 11C15.6305 13.5573 13.5573 15.6305 11 15.6305C8.4426 15.6305 6.36943 13.5573 6.36943 11ZM11 4.05415C7.1639 4.05415 4.05415 7.1639 4.05415 11C4.05415 14.8361 7.1639 17.9458 11 17.9458C14.8361 17.9458 17.9458 14.8361 17.9458 11C17.9458 7.1639 14.8361 4.05415 11 4.05415Z" fill="#F7F7F7"/>
+</svg> : <svg
             width="22"
             height="22"
             viewBox="0 0 22 22"
@@ -67,6 +91,8 @@ function App() {
               fill="#F7F7F7"
             />
           </svg>
+  
+        }
         </button>
       </div>
       <div className="flex flex-col w-full px-30 my-7.5">
@@ -74,7 +100,7 @@ function App() {
           todo.map((task) => (
             <div>
               {" "}
-              <ToDoItem key={task.id} id={task.id} content={task.content} removeTask={removeTask} />{" "}
+              <ToDoItem key={task.id} id={task.id} isDone={task.isDone} content={task.content} removeTask={removeTask} toggleDone={toggleDone} />{" "}
               <div className="w-full my-4 border-t border-[#6C63FF]" />{" "}
             </div>
           ))}

@@ -1,6 +1,25 @@
 @import "tailwindcss";
 
+:root{
+  --background: #F7F7F7;
+  --text: #252525;
+  --purple: #6C63FF;
+  --gray: rgba(37, 37, 37, 0.8);
+  --check: rgba(37, 37, 37, 0.5);
+}
+
+.dark-theme{
+  --background: #252525;
+  --text: #F7F7F7;
+  --check: rgba(255, 255, 255, 0.5);
+}
+
+.checked {
+  color: var(--check);
+}
+
 body {
   font-family: "Kanit", sans-serif;
-  color: #252525;
+  color: var(--text);
+  background-color: var(--background);
 }

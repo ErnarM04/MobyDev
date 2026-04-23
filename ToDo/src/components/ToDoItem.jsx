@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 
-function ToDoItem({ id, content, removeTask }) {
+function ToDoItem({ id, content, removeTask, isDone, toggleDone }) {
   const [onEdit, setOnEdit] = useState(false);
   const [onFocus, setOnFocus] = useState(false);
   const [trashFocus, setTrashFocus] = useState(false);
@@ -9,7 +9,7 @@ function ToDoItem({ id, content, removeTask }) {
 
   return (
     <div
-      className="flex flex-row gap-4 items-center"
+      className="flex flex-row gap-4 text-start items-center"
       onMouseEnter={() => {
         setOnFocus(true);
       }}
@@ -20,8 +20,10 @@ function ToDoItem({ id, content, removeTask }) {
       <input
         className="bg-[#6C63FF] p-1 size-6.5 shrink-0 focus:bg-[#6C63FF]"
         type="checkbox"
+        checked={isDone}
+        onChange={() => toggleDone(id)}
       />
-      <input className="text-xl font-medium text-start w-9/10" onKeyDown={(e) => {
+      <input className={"text-xl font-medium text-start w-9/10 " + (isDone ? "checked line-through": "")} onKeyDown={(e) => {
     if (e.key === "Enter") {
       setOnEdit(false);
     }
