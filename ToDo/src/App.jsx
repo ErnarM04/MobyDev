@@ -14,28 +14,30 @@ function App() {
     { id: 3, content: "To Do Something", isDone: false },
   ];
   const [todo, setTodo] = useState([...test]);
-  const [origList, setOrigList] = useState([]);
+  const [origList, setOrigList] = useState([...test]);
     const { darkMode, toggleTheme } = useTheme()
 
     function selectCategory(cat){
-      if(category === "ALL"){
-        setOrigList([...todo]);
-      }
       setCategory(cat);
       if(cat === "ALL") setTodo([...origList]);
-      if(cat === "DONE") setTodo(todo.filter((task) => task.isDone));
-      if(cat === "UNDONE") setTodo(todo.filter((task) => !task.isDone));
+      if(cat === "DONE") setTodo(origList.filter((task) => task.isDone));
+      if(cat === "UNDONE") {
+        console.log(cat);
+        
+        setTodo(origList.filter((task) => !task.isDone))};
     }
 
   function addNote(){
     const task = {id: Date.now(), content: "TODO " + (todo.length+1), isDone: false};
     setTodo([...todo, task]);
+    setOrigList([...todo, task]);
     console.log(todo);
   }
 
   function removeTask(id){
     const newTodo = todo.filter((task) => task.id !== id);
     setTodo(newTodo);
+    setOrigList(newTodo);
   }
 
   function toggleDone(id) {
@@ -43,6 +45,7 @@ function App() {
     task.id === id ? { ...task, isDone: !task.isDone } : task
   );
   setTodo(updated);
+  setOrigList(updated)
 }
 
   return (
@@ -68,7 +71,9 @@ function App() {
             />
           </svg>
         </div>
-        <select className="text-[#F7F7F7] rounded-[5px] p-2.5 bg-[#5850DD] border border-[#6C63FF]">
+        <select className="text-[#F7F7F7] rounded-[5px] p-2.5 bg-[#5850DD] border border-[#6C63FF]" 
+        onChange={(e) => selectCategory(e.target.value)}
+        value={category}>
           <option>ALL</option>
           <option>DONE</option>
           <option>UNDONE</option>
