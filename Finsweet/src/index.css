@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body{
+    font-family: "Sen", sans-serif;
+    color: #232536;
+}
+
+.sen{
+    font-family: "Sen", sans-serif;
+}
+.inter{
+    font-family: "Inter", sans-serif;
+}
